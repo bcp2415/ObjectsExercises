@@ -85,8 +85,13 @@ function crewReports(animal) {
 
 crewReports(tardigrade);
 
-function fitnessTest(array) {
-  
-}
 
 // Start an animal race!
+
+function fitnessTest(array) {
+  let turns = [0, 0, 0, 0, 0];
+
+  for (let i = 0; i < crew.length; i++) {
+    
+  }  
+}
