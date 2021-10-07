@@ -50,8 +50,8 @@ let tardigrade = {
 
 
 // After you have created the other object literals, add the astronautID property to each one.
-let animals = [];
-animals.push(superChimpOne, chimpTwo, beagle, salamander, tardigrade);
+let crew = [];
+crew.push(superChimpOne, chimpTwo, beagle, salamander, tardigrade);
 
 let astronautIDs = [];
 
@@ -59,7 +59,7 @@ function getNewId() {
   return (Math.ceil(Math.random() * 10));
 }
 
-for (let i = 0; i < animals.length; i++) {
+for (let i = 0; i < crew.length; i++) {
   let newId = getNewId();
 
   while (astronautIDs.includes(newId)) {
@@ -68,9 +68,9 @@ for (let i = 0; i < animals.length; i++) {
 
   astronautIDs.push(newId);
 
-  animals[i].astronautID = newId;
+  crew[i].astronautID = newId;
 
-  console.log(animals[i].astronautID);
+  console.log(crew[i].astronautID);
 };
 
 
@@ -78,5 +78,15 @@ for (let i = 0; i < animals.length; i++) {
 // Create an array to hold the animal objects.
 
 // Print out the relevant information about each animal.
+
+function crewReports(animal) {
+  console.log(`${animal.name} is a ${animal.species}.  They are ${animal.age} years old and ${animal.mass} kilograms.  Their ID is ${animal.astronautID}.`)
+}
+
+crewReports(tardigrade);
+
+function fitnessTest(array) {
+  
+}
 
 // Start an animal race!
