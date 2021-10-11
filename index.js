@@ -24,7 +24,8 @@ let chimpTwo = {
   mass: 11,
   age: 6,
     move: function() {
-      return (Math.round(Math.random() * 10));
+      //return (Math.round(Math.random() * 10));  a better way is:
+      return (Math.floor(Math.random() * 11));
     }
 };
 
@@ -83,15 +84,28 @@ function crewReports(animal) {
   console.log(`${animal.name} is a ${animal.species}.  They are ${animal.age} years old and ${animal.mass} kilograms.  Their ID is ${animal.astronautID}.`)
 }
 
-crewReports(tardigrade);
+crewReports(beagle);
 
 
 // Start an animal race!
 
 function fitnessTest(array) {
   let turns = [0, 0, 0, 0, 0];
+  let totalSteps = [0, 0, 0, 0, 0];
 
-  for (let i = 0; i < crew.length; i++) {
+  for (let i = 0; i < array.length; i++) {
+    while (totalSteps[i] < 20) {
+      const steps = crew[i].move();
+      totalSteps[i] += steps;
+      turns[i]++;
+    };
+  };
+  for (let i = 0; i < array.length; i++) {
+    console.log(`${array[i].name} took ${turns[i]} turns to take 20 steps.`);
     
-  }  
+  }
+  return turns;
 }
+
+fitnessTest(crew);
+
